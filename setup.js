@@ -261,18 +261,21 @@
             + '&nbsp;&nbsp;&nbsp;newFile.txt&nbsp;&nbsp;&nbsp;myFolder'
         },
         {
-            cmd: 'cat myFile.txt',
+            cmd: 'cat newFile.txt',
             output: 'Put this in my file'
         },
         {
             cmd: 'echo Now put this in there > newFile.txt'
         },
         {
-            cmd: 'cat myFile.txt',
+            cmd: 'cat newFile.txt',
             output: 'Now put this in there'
         },
         {
-            cmd: 'echo Add this to the end >> newFile.txt',
+            cmd: 'echo Add this to the end >> newFile.txt'
+        },
+        {
+            cmd: 'cat newFile',
             output: 'Now put this in there<br />'
                 + 'Add this to the end'
         },
@@ -297,7 +300,7 @@
             cmd: 'myVariable="some value"'
         },
         {
-            cmd: 'myVariable=$(cat myFile.txt)'
+            cmd: 'myVariable=$(cat newFile.txt)'
         },
         {
             cmd: 'echo $myVariable',
@@ -306,7 +309,7 @@
                 + 'I have 4 kittens'
         },
         {
-            cmd: 'myVariable=$(cat myFile.txt | tr "4" "9")'
+            cmd: 'myVariable=$(cat newFile.txt | tr "4" "9")'
         },
         {
             cmd: 'echo $myVariable',
@@ -372,17 +375,80 @@
             output: 'Success'
         },
         {
-            cmd: "\\\n> if test $myVariable -eq 438\n"
-                + "> then\n> echo Success!\n> fi"
+            cmd:
+            [
+                "\\",
+                "> if test $myVariable -eq 438",
+                "> then",
+                "> echo Success!",
+                "> fi"
+            ]
         },
         {
-            cmd: "\\\n> if test $myVariable -lt 438\n"
-                + "> then\n> echo Success!\n> fi"
+            cmd:
+            [
+                "\\",
+                "> if test $myVariable -lt 438",
+                "> then",
+                "> echo Success!",
+                "> fi"
+            ]
         },
         {
-            cmd: "\\\n> if [[ $myVariable == cat ]]\n"
-                + "> then\n> echo Success!\n> fi",
+            cmd:
+            [
+                "\\",
+                "> if [ $myVariable == cat ]",
+                "> then",
+                "> echo Success!",
+                "> fi"
+            ],
             output: 'Success'
+        }
+    ]);
+
+    var slide5 = new Slide('5',
+    [
+        {
+            cmd:
+            [
+                "\\",
+                "> while test \"$myVariable\" != aaaa",
+                "> do",
+                "> echo Cheese",
+                "> myVariable=$myVariable'a'",
+                "> done"
+            ],
+            output: 'Cheese<br />Cheese<br />Cheese<br />Cheese'
+        },
+        {
+            cmd:
+            [
+                "\\",
+                "> for value in 1 2 3",
+                "> do",
+                "> echo $value",
+                "> done"
+            ],
+            output: '1<br />2<br />3'
+        },
+        {
+            cmd: 'ls',
+            output: 'myFile.html&nbsp;&nbsp;&nbsp;myOtherFile.xml'
+            + '&nbsp;&nbsp;&nbsp;myFolder'
+        },
+        {
+            cmd:
+            [
+                "\\",
+                "> for value in $(ls)",
+                "> do",
+                "> echo Catalope: $value",
+                "> done"
+            ],
+            output: 'Cantaloupe: myFile.html<br />'
+                + 'Cantaloupe: myOtherFile.xml<br />'
+                + 'Cantaloupe: myFolder'
         }
     ]);
 
