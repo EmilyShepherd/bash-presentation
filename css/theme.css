@@ -73,7 +73,7 @@ body {
 
 .reveal .col pre
 {
-    width: 400px;
+    width: 500px;
     height: 150px;
 }
 
@@ -82,7 +82,7 @@ body {
     color: white;
     background: black;
     border: 2px solid grey;
-    width: 730px;
+    width: 1000px;
     height: 580px;
     box-shadow: 3px 3px 5px black;
     vertical-align: top;

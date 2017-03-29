@@ -113,10 +113,148 @@
         </section>
 
         <section>
-          <section data-state="cmd">
+          <section data-state="cmd1">
             <h2>Command Line</h2>
-            <pre class="cmd" id="cmd_holder">
-              <span id="cmd">/project &gt;&nbsp;<span id="cmdline"></span></span>
+            <pre class="cmd" id="cmd_holder1">
+              <span id="cmd1">/project&gt;&nbsp;<span id="cmdline1"></span></span>
+            </pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Calling Commands</h2>
+            <ul>
+              <li class="fragment">
+                Each of our examples is a program: ls, cd, echo
+              </li>
+              <li class="fragment">
+                When calling commands, you can pass "extra" information
+                as arguments:
+              </li>
+              <ul>
+                <li class="fragment">
+                  ls -lah /project/myFolder/myOtherFile.txt
+                </li>
+                <li class="fragment">
+                  Command: ls
+                </li>
+                <li class="fragment">
+                  Arguments: -lah /project/myFolder/myOtherFile.txt
+                </li>
+              </ul>
+            </ul>
+          </section>
+          <section>
+            <h2>Arguments</h2>
+            <ul>
+              <li class="fragment">
+                Arguments are separated by spaces
+              </li>
+              <ul>
+                <li class="fragment">
+                  If you need a space in an argument, you can escape it
+                  with a backslash, or surround it with quotes:
+                </li>
+                <ul>
+                  <li class="fragment">
+                    command "argument 1" argumment\ 2
+                  </li>
+                  <li class="fragment">
+                    command "arg"umen't 1'
+                  </li>
+                </ul>
+              </ul>
+            </ul>
+          </section>
+          <section>
+            <h2>Program inputs and output</h2>
+            <ul>
+              <li class="fragment">
+                As well as arguments, programs can accept an input
+                stream of data, known as standard input (stdin)
+              </li>
+              <li class="fragment">
+                Programs can output a stream of data, standard output
+                (stdout)
+              </li>
+              <li class="fragment">
+                Programs can output a stream of error messages, standard
+                error (stderr)
+              </li>
+              <li class="fragment">
+                Programs give a numerical status code when they finish,
+                indicating how it went
+              </li>
+              <ul>
+                <li class="fragment">
+                  0 means success
+                </li>
+                <li class="fragment">
+                  Anything other than 0 means failure
+                </li>
+              </ul>
+            </ul>
+          </section>
+
+          <section data-state="cmd2">
+            <pre class="cmd" id="cmd_holder2">
+              <span id="cmd2">/project&gt;&nbsp;<span id="cmdline2"></span></span>
+            </pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>More Complex Syntax</h2>
+            <ul>
+              <li class="fragment">
+                Sometimes we want to join commands together to perform
+                more complex tasks.
+              </li>
+              <li class="fragment">
+                A program's stdout doesn't have to just be outputted to
+                the terminal screen. Instead we can direct it elsewhere:
+              </li>
+              <ul>
+                <li class="fragment">
+                  Into a file, this is known as a redirect.
+                </li>
+                <li class="fragment">
+                  Into another command, known as a pipe.
+                </li>
+              </ul>
+            </ul>
+          </section>
+          <section data-state="cmd3">
+            <h2>Example</h2>
+            <pre class="cmd" id="cmd_holder3">
+              <span id="cmd3">/project&gt;&nbsp;<span id="cmdline3"></span></span>
+            </pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Let's do some logic</h2>
+            <ul>
+              <li class="fragment">
+                So far all we've done is string commands together
+              </li>
+              <li class="fragment">
+                This is great, but some times we do need a bit more
+              </li>
+              <ul>
+                <li class="fragment">Conditionals</li>
+                <li class="fragment">Loops</li>
+              </ul>
+            </ul>
+          </section>
+
+          <section data-state="cmd4">
+            <h2>Conditionals</h2>
+            <pre class="cmd" id="cmd_holder4">
+              <span id="cmd4">/project&gt;&nbsp;<span id="cmdline4"></span></span>
             </pre>
           </section>
         </section>
