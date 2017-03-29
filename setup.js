@@ -102,17 +102,7 @@
                     step.call(this);
                     break
                 default:
-                    if (typeof step.cmd === 'object')
-                    {
-                        step.cmd.forEach(function(item)
-                        {
-                            this.typeCmd(item);
-                        });
-                    }
-                    else
-                    {
-                        this.typeCmd(step.cmd);
-                    }
+                    this.typeCmd(step.cmd);
 
                     this.queuedStep = function()
                     {
@@ -131,12 +121,21 @@
         }
     });
 
-    Slide.prototype.typeCmd = function(command, output, cb)
+    Slide.prototype.typeCmd = function(commandArg)
     {
         var _self = this;
+        var command = typeof commandArg === 'object'
+            ? commandArg[0]
+            : commandArg;
+
         typeLetters(this.cmdline, command + "\n", function()
         {
             _self.cmdHolder.scrollTop = 9999999;
+
+            if (typeof commandArg === 'object' && commandArg.length > 1)
+            {
+                _self.typeCmd(commandArg.splice(1));
+            }
         });
     }
 
